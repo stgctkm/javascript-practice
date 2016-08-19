@@ -1,3 +1,4 @@
+// https://schoo.jp/class/3060
 (function() {
     'use strict';
 
