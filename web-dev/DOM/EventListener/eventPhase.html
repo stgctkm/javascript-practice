@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+</head>
+<body>
+
+Bubling phase イベントが発生した要素から親要素に向かって伝達される
+<br/>
+Capture phase イベントが発生した要素に向かって,親要素から伝達される
+
+<div id="outer">
+  <div id="inner">
+    divの要素内容
+  </div>
+</div>
+
+<script>
+ //false Bubling child -> parnt
+ //true Capture parent -> child
+  function load() {
+    //register event to parent element
+    document.getElementById('outer').addEventListener('click', function() {
+      console.log('parent event listener');
+    }, false);
+
+    //register event to child element
+    // document.getElementById('inner').addEventListener('click', function() {
+    //   console.log('child event listner');
+    // }, false);
+
+    document.getElementById('inner').addEventListener('click', function(event) {
+      console.log('child event listner');
+      event.stopPropagation();
+    }, false);
+  }
+  document.addEventListener('DOMContentLoaded', load, false);
+</script>
+
+</body>
+</html>

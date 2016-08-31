@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>node sample</title>
+</head>
+<body>
+
+Node
+<a href="https://www.google.co.jp/">Google</a><br/>
+<a href="http://www.yahoo.co.jp/">Yahoo</a><br/>
+<a href="http://www.bing.com/">Bing</a><br/>
+
+<script>
+  window.onload = function() {
+    var url = [];
+    var list = document.getElementsByTagName('a');
+    for (var i = 0; i < list.length; i++) {
+      url.push(list.item(i).href);
+    }
+    console.log(url.join('\n'));
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>node sample</title>
+    <link rel="stylesheet" href="css2.css"/>
+</head>
+<body>
+
+<p id=contents>color is changing on mouse over</p>
+<script>
+  window.onload = function() {
+    var element = document.getElementById('contents');
+    element.onmouseover = function() {
+      element.className= 'highlight';
+    };
+    element.onmouseout = function() {
+      element.className= 'normal';
+    };
+  }
+</script>
+</body>
+</html>

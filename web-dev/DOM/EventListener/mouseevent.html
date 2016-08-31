@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+</head>
+<body>
+<div id="click" style="height: 150px; border: 1px; background-color: #d28787;solid black;">
+</div>
+
+<script>
+  function load() {
+    document.getElementById('click').addEventListener('mousedown', function(event) {
+      console.log('mousedown: ' + event.clientX + ", " + event.clientY);
+    }, false);
+  }
+  document.addEventListener('DOMContentLoaded', load, false);
+</script>
+
+</body>
+</html>

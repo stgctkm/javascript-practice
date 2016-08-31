@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+</head>
+<body>
+<div id="drop" style="height: 150px; border: 1px; background-color: #d28787;solid black;"> </div>
+<span id="drag" draggable="true">you can drag here!</span>
+
+<script>
+  function load() {
+    document.getElementById('drag').addEventListener('dragstart', dragstart, false);
+
+    var target = document.getElementById('drop');
+    target.addEventListener('drop', handleDrop, false);
+    target.addEventListener('dragover', dragOver, false);
+  }
+
+  var dragstart = function(event) {
+    event.dataTransfer.setData('text', event.target.id);
+  };
+
+  var dragOver = function(event) {
+    event.preventDefault();
+  };
+
+  var handleDrop = function(event) {
+    var id = event.dataTransfer.getData('text');
+    event.currentTarget.appendChild(document.getElementById(id));
+    event.preventDefault();
+  };
+  
+  document.addEventListener('DOMContentLoaded', load, false);
+</script>
+
+</body>
+</html>

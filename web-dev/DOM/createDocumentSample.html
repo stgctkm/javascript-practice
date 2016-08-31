@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>node sample</title>
+</head>
+<body>
+
+Node
+<form id='form'>
+  <label>サイト名：<br/>
+    <input type="text" name="name" size="50" />
+  </label>
+  <br/>
+  <label>URL: <br/>
+    <input type="text" name="url" size="50" />
+  </label>
+  <input type="button" id="button" value="確定"/>
+</form>
+<div id='display'></div>
+
+<script>
+  window.onload = function() {
+    document.getElementById('button').onclick = function() {
+      var form = document.getElementById('form');
+      var anchor = document.createElement('a');
+      anchor.href = form.url.value;
+      var name = document.createTextNode(form.name.value);
+      anchor.appendChild(name);
+
+      var display = document.getElementById('display');
+      display.appendChild(anchor);
+    }
+
+  }
+</script>
+</body>
+</html>
